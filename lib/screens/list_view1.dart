@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 
-class HomeScreen extends StatelessWidget {
+class ListView1Screen extends StatelessWidget {
 
   final opciones = const ['korn','slipknot','Mudvayne','System of a Down','Limp Bizkit'];
    
-  const HomeScreen({super.key});
+  const ListView1Screen({super.key});
   
   @override
   Widget build(BuildContext context) {
