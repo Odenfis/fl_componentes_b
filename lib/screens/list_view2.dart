@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 class ListView2Screen extends StatelessWidget {
+
+  final opciones = const ['Korn','Slipknot','Mudvayne','System of a Down','Limp Bizkit','Tool'];
    
   const ListView2Screen({super.key});
   
@@ -11,9 +13,13 @@ class ListView2Screen extends StatelessWidget {
         title: Text('List View 2'),
       ),
       body: ListView.separated(
-        itemBuilder:(context, index) => Text('Hola mundo'), 
+        itemBuilder:(context, index) => ListTile(
+          leading: Icon(Icons.music_note),
+          title: Text(opciones[index], style: TextStyle(fontSize: 20)),
+          trailing: Icon(Icons.play_arrow),
+        ), 
         separatorBuilder:(context, index) => Divider(), 
-        itemCount: 30)
+        itemCount: opciones.length)
     );
   }
 }
