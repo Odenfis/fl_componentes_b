@@ -1,4 +1,5 @@
 //import 'package:fl_componentes_grupob/screens/screens.dart';
+import 'package:fl_componentes_grupob/router/app_routes.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -11,12 +12,12 @@ class HomeScreen extends StatelessWidget {
       appBar: AppBar(
         title: Text('Menu Principal - Flutter', style: TextStyle(color: Colors.white),),
         elevation: 0,
-        backgroundColor: Colors.indigo[800],
+        //backgroundColor: Colors.indigo[800],
       ),
       body: ListView.separated(
         itemBuilder:(context, index) => ListTile(
-          leading: Icon(Icons.settings_accessibility),
-          title: Text('Screen de Prueba'),
+          leading: Icon(AppRoutes.menuOptions[index].icon),
+          title: Text(AppRoutes.menuOptions[index].name),
           trailing: Icon(Icons.arrow_circle_down),
           onTap: () {
             /*
@@ -24,11 +25,11 @@ class HomeScreen extends StatelessWidget {
               builder:(context) => AlertScreen(),
               );
               Navigator.push(context, route);*/
-              Navigator.pushNamed(context, 'card');
+              Navigator.pushNamed(context, AppRoutes.menuOptions[index].route);
           },
         ), 
         separatorBuilder:(context, index) => Divider(), 
-        itemCount: 10)
+        itemCount: AppRoutes.menuOptions.length)
     );
   }
 }

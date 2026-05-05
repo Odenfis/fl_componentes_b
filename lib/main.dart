@@ -1,5 +1,6 @@
 
 import 'package:fl_componentes_grupob/router/app_routes.dart';
+import 'package:fl_componentes_grupob/themes/app_themes.dart';
 import 'package:flutter/material.dart';
 
 void main() => runApp(const MyApp());
@@ -13,8 +14,9 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Componentes Grupo B',  
       initialRoute: AppRoutes.initialRoute,
-      routes: AppRoutes.routes,
+      routes: AppRoutes.getAppRoutes(),
       onGenerateRoute: AppRoutes.onGenerateRoute,
+      theme: AppTheme.ligthTheme
     );
   }
 }
