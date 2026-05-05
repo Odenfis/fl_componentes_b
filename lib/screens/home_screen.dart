@@ -24,7 +24,7 @@ class HomeScreen extends StatelessWidget {
               builder:(context) => AlertScreen(),
               );
               Navigator.push(context, route);*/
-              Navigator.pushNamed(context, 'tarjeta');
+              Navigator.pushNamed(context, 'card');
           },
         ), 
         separatorBuilder:(context, index) => Divider(), 
