@@ -1,13 +1,23 @@
 import 'package:flutter/material.dart';
 
 class CustomCardType3 extends StatelessWidget {
+
+  final String imageURL;
+  final String? descripcion;
+
   const CustomCardType3({
-    super.key,
+    super.key, 
+    required this.imageURL, 
+    this.descripcion,
   });
 
   @override
   Widget build(BuildContext context) {
     return Card(
+      clipBehavior: Clip.antiAlias,
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(30)
+      ),
       child: Column(
         children: [
           /*Image(
@@ -15,16 +25,17 @@ class CustomCardType3 extends StatelessWidget {
           )*/
           FadeInImage(
             placeholder: AssetImage('assets/jar-loading.gif'), 
-            image: NetworkImage('https://www.einerd.com/wp-content/uploads/2025/08/Captura-de-tela-2025-08-11-145116.jpg'),
+            image: NetworkImage(imageURL),
             width: double.infinity,
             height: 260,
             fit: BoxFit.cover,
             fadeInDuration: Duration(milliseconds: 300),
           ),
+          if (descripcion != null)
           Container(
             alignment: AlignmentDirectional.centerEnd,
             padding: EdgeInsets.only(right: 20, top: 10, bottom: 10),
-            child: Text('Peliculas en Cartelera'),
+            child: Text(descripcion ?? 'Sin dato'),
           )
         ],
       ),
