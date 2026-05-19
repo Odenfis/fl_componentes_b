@@ -15,7 +15,16 @@ class CustomCardType3 extends StatelessWidget {
           )*/
           FadeInImage(
             placeholder: AssetImage('assets/jar-loading.gif'), 
-            image: NetworkImage('https://www.einerd.com/wp-content/uploads/2025/08/Captura-de-tela-2025-08-11-145116.jpg')
+            image: NetworkImage('https://www.einerd.com/wp-content/uploads/2025/08/Captura-de-tela-2025-08-11-145116.jpg'),
+            width: double.infinity,
+            height: 260,
+            fit: BoxFit.cover,
+            fadeInDuration: Duration(milliseconds: 300),
+          ),
+          Container(
+            alignment: AlignmentDirectional.centerEnd,
+            padding: EdgeInsets.only(right: 20, top: 10, bottom: 10),
+            child: Text('Peliculas en Cartelera'),
           )
         ],
       ),
