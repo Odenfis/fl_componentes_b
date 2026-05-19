@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 
 class AppTheme{
-  static const Color primary = Colors.purple;
+  static const Color primary = Colors.blue;
+  static const Color textosBlancos = Colors.white;
   static final ThemeData ligthTheme = ThemeData(
     primaryColor: primary,
     appBarTheme: AppBarTheme(backgroundColor: primary),
@@ -12,6 +13,16 @@ class AppTheme{
     textButtonTheme: TextButtonThemeData(
       style: TextButton.styleFrom(
         foregroundColor: primary)
+    ),
+    floatingActionButtonTheme: FloatingActionButtonThemeData(
+      backgroundColor: primary
+    ),
+    elevatedButtonTheme: ElevatedButtonThemeData(
+      style: ElevatedButton.styleFrom(
+        backgroundColor: primary,
+        foregroundColor: textosBlancos,
+        shape: StadiumBorder()
+      )
     )
   );
   static final ThemeData darkTheme = ThemeData(
